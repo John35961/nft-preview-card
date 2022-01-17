@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-    height: 600px;
+    min-height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,8 @@ body {
     transform: scale(1);
     box-shadow: 0;
     background-color: var(--dark-blue);
-    width: 275px;
+    width: 250px;
+    max-width: 100%;
     border-radius: 20px;
     padding: 20px;
     transition: transform 0.4s, box-shadow 0.4s;
@@ -62,12 +63,16 @@ body {
 
 .image {
     align-self: center;
-    width: 275px;
+    width: 250px;
     border-radius: 15px;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .icn-view {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .item-image:hover .icn-view {
@@ -75,6 +80,8 @@ body {
     display: block;
     position: absolute;
     z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s;
 }
 
 .item-image:hover {
@@ -85,6 +92,7 @@ body {
 
 .item-image:hover .image {
     opacity: 0.65;
+    transition: opacity 0.5s;
 }
 
 
@@ -156,4 +164,19 @@ body {
     border-radius: 50%;
     border: 1px solid var(--white);
     margin-right: 15px;
+}
+
+
+/* Author attribution's styling */
+
+.author {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--light-blue);
+    text-align: center;
+}
+
+.author a {
+    color: var(--white);
+    text-decoration: none;
 }
